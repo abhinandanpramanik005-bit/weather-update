@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+body {
+  background: #222;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.card {
+  width: 90%;
+  max-width: 500px;
+  background: linear-gradient(135deg, #00feba, #5b548a);
+  color: #fff;
+  margin: 80px auto 0;
+  border-radius: 20px;
+  padding: 40px 35px;
+  text-align: center;
+  animation: fadeInUp 1s ease;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.search {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.search input {
+  border: 0;
+  outline: 0;
+  background: #ebfffc;
+  color: #555;
+  padding: 10px 25px;
+  height: 60px;
+  border-radius: 30px;
+  flex: 1;
+  margin-right: 16px;
+  font-size: 22px;
+  font-weight: bold;
+}
+.search button {
+  border: 0;
+  outline: 0;
+  background: #ebfffc;
+  border-radius: 50%;
+  width: 76px;
+  height: 67px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.search button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #00feba;
+}
+
+.weather-icon {
+  width: 120px;
+  margin-top: 30px;
+  animation: bounce 2s infinite;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.weather h1 {
+  font-size: 80px;
+  font-weight: 500;
+}
+.weather h2 {
+  font-size: 45px;
+  font-weight: 400;
+  margin-top: -10px;
+}
+.details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  margin-top: 50px;
+}
+.col {
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+.col img {
+  width: 40px;
+  margin-right: 11px;
+}
+.humidity, .wind {
+  font-size: 28px;
+  margin-top: -6px;
+}
+.extra-details {
+  margin-top: 30px;
+  font-size: 18px;
+  animation: fadeInUp 1s ease;
+}
+footer {
+  margin-top: auto;
+  text-align: center;
+  padding: 20px;
+  color: #aaa;
+  font-size: 14px;
+}
+.card {
+  width: 90%;
+  max-width: 500px;
+  background: linear-gradient(135deg, #00feba, #5b548a);
+  color: #fff;
+  margin: 80px auto 0;
+  border-radius: 20px;
+  padding: 40px 35px;
+  text-align: center;
+  animation: fadeInUp 1s ease;   /* Entrance animation */
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glow background animation */
+.card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(0,0,0,0.1));
+  transform: rotate(25deg);
+  animation: glow 6s linear infinite;
+}
+
+/* Hover effect */
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 16px 35px rgba(0,0,0,0.3);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glow {
+  0% { transform: rotate(25deg) translateX(0); }
+  100% { transform: rotate(25deg) translateX(50%); }
+}
+.search button {
+  border: 0;
+  outline: 0;
+  background: #ebfffc;
+  border-radius: 50%;
+  width: 76px;
+  height: 67px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.search button::after {
+  content: "";
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: rgba(0,255,186,0.3);
+  transition: left 0.4s;
+}
+
+.search button:hover::after {
+  left: 0;
+}
